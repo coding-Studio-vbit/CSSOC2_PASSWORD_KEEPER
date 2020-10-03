@@ -1,0 +1,68 @@
+
+.image,
+.photo img{
+    position: absolute;
+}
+.photo img{
+   height:45%; 
+   padding-top: 5%;
+   position: absolute; left: 10%; bottom: 40%;
+}
+
+
+
+
+.form-box {
+    background: #fff ;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 5px 2px #000;
+    position: absolute;
+    top: 20vh;
+   
+   
+
+}
+.form-group{
+    font-family: monaco, Consolas, "Lucida Console", monospace;
+}
+.btn{
+    background:#1d1919;
+    border-color:#1d1919;
+    text-emphasis: #000;
+    border-radius: 60px;
+    font-family: monaco, Consolas, "Lucida Console", monospace;
+    padding: 12px 28px;
+    text-align: center;
+    margin: auto;
+    display: grid;
+   
+}
+@media(max-width:990px){
+    .form-box{
+        height:20vh;
+        top:10%;
+        margin:20px;
+        width: 300px;
+        
+        margin-block-start: 35%;
+        block-size: auto;
+        
+        
+        
+    }
+    .image,
+    .photo img{
+        position: absolute;
+    }
+    .photo img{
+        widows: 300px;; 
+        height:300px;
+        position:absolute; left:50%;right:50%;top:60%;bottom:0;
+
+
+
+
+    }
+
+}
