@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Responsive Navbar</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\Kowshika\Desktop\CSSOC2_PASSWORD_KEEPER\frontend\css\dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Password keeper</label>
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">My profile</a></li>
+      </ul>
+    </nav>
+    <section></section>
+
+
+    <div class="main">
+
+        <!--cards -->
+       
+       <div class="card">
+       
+       <div class="image">
+          <img src="C:\Users\Kowshika\Desktop\CSSOC2_PASSWORD_KEEPER\frontend\amazon-prime-takes-stance-at-streaming-crease.png">
+       </div>
+       <div class="title">
+        <h1>
+       Prime video</h1>
+       </div>
+       <div class="des">
+        
+       <button>Add password</button>
+       </div>
+       </div>
+       <!--cards -->
+       
+       
+       <div class="card">
+       
+       <div class="image">
+          <img src="C:\Users\Kowshika\Desktop\CSSOC2_PASSWORD_KEEPER\frontend\netflix.jpg">
+       </div>
+       <div class="title">
+        <h1>
+       Netflix</h1>
+       </div>
+       <div class="des">
+        
+       <button type="submit" onclick="href('add password.html')">Add password</button>
+       </div>
+       </div>
+       <!--cards -->
+       
+       
+       <div class="card">
+       
+       <div class="image">
+          <img src="C:\Users\Kowshika\Desktop\CSSOC2_PASSWORD_KEEPER\frontend\download.jpg">
+       </div>
+       <div class="title">
+        <h1>
+       Facebook</h1>
+       </div>
+       <div class="des">
+        
+       <button>Add password</button>
+       </div>
+       </div>
+       <!--cards -->
+       
+       
+       <div class="card">
+       
+       <div class="image">
+          <img src="C:\Users\Kowshika\Desktop\CSSOC2_PASSWORD_KEEPER\frontend\Gmail-Dark-Mode.webp">
+       </div>
+       <div class="title">
+        <h1>
+       Gmail</h1>
+       </div>
+       <div class="des">
+        <button>Add password</button>
+       </div>
+       </div>
+       <!--cards -->
+       
+       
+       <div class="card">
+       
+       <div class="image">
+          <img src="C:\Users\Kowshika\Desktop\CSSOC2_PASSWORD_KEEPER\frontend\top-talent-leaving-flipkart-in-search-of-greener-pastures.webp">
+       </div>
+       <div class="title">
+        <h1>
+       Flipcart</h1>
+       </div>
+       <div class="des">
+         <button>Add password</button>
+       </div>
+       </div>
+       <!--cards -->
+       
+       <div class="card">
+       
+       <div class="image">
+          <img src="C:\Users\Kowshika\Desktop\CSSOC2_PASSWORD_KEEPER\frontend\spotify-logo.png">
+       </div>
+       <div class="title">
+        <h1>
+       Spotify</h1>
+       </div>
+       <div class="des">
+        
+       <button>Add password</button>
+       </div>
+       </div>
+       <!--cards -->
+       
+       <div class="card">
+       
+       <div class="image">
+          <img src="C:\Users\Kowshika\Desktop\CSSOC2_PASSWORD_KEEPER\frontend\6.jpg">
+       </div>
+       <div class="title">
+        <h1>
+       Zomato</h1>
+       </div>
+       <div class="des">
+        
+       <button>Add password</button>
+       
+       </div>
+       </div>
+       <!--cards -->
+       
+    </div>
+    <div class="container">
+        <center><h1>Add some cards..</h1></center>
+        
+        
+        <center><button type="button" class="btn btn-info" id="btnGen">Generate</button></center>
+        </form>
+        <br>
+        <div class="row" id="contentPanel">
+    
+        </div>
+    </div>
+
+<script>
+    var addCols = function (num){
+        for (var i=1;i<=num;i++) {
+            var myCol = $('<div class="col-sm-3 col-md-3 pb-2"></div>');
+            var myPanel = $('<div class="card"><div class="image"><img src="lock.png"></div><div class="title"><h1>Website Name</h1></div><div class="des"><button>Add password</button></div></div>');
+            myPanel.appendTo(myCol);
+            myCol.appendTo('#contentPanel');
+        }
+        
+        
+        $('.close').on('click', function(e){
+          e.stopPropagation();  
+              var $target = $(this).parents('.col-sm-3');
+              $target.hide('slow', function(){ $target.remove(); });
+        });
+    };
+    
+    $(document).ready(function(){
+        addCols('');
+        return false;
+    });
+    
+    $( "#btnGen" ).click(function() {
+      addCols('1');
+      return false;
+    });
+    
+</script>
+    
+
+  </body>
+</html>
