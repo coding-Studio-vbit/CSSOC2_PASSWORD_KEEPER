@@ -41,7 +41,7 @@ let values = [full_name, email, myhashpass]
 let quer = 'INSERT INTO register(full_name,email, password)values($1, $2, $3)';
 pool.query(quer, values, (err, res) => {
 console.log(err, res)
-pool.end();
+//pool.end();
 })
 res.sendFile("login.html", { root: `${__dirname}/../frontend/` });
 })
