@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +9,8 @@
 
 
             <title>PS/Login Page</title>
-            <script tpye='text/javascript'>
-            
-
-            </script>
-               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
-
-          
-              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity=
+              "sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
                 <link rel="stylesheet" type="text/css" media="screen" href="css/global.css">
 </head>
 <body>
@@ -26,45 +19,32 @@
         <section class="row justify-content-center">
             <section class="col-12 col-sm-6 col-md-3" >
 
-              <form class="form-box" id="form">
+              <form action="/register" method="post" class="form-box" >
                 <div class="form-group">
-                  <label>Username</label>
-                  <input type="text" class="form-control" id="user" aria-describedby="emailHelp" placeholder="Full Name">
-                  
-                  <i class="fas fa-check-circle"></i>
-                  <i class="fas fa-exclamation-circle"></i>
-                  <small >Error msg</small>
+                  <label for="full_name">Full Name</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Full Name" name="full_name" id="full_name">
+
                 </div>
 
                     <div class="form-group">
-                      <label>Email address</label>
-                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email ID">
-                      <i class="fas fa-check-circle"></i>
-                      <i class="fas fa-exclamation-circle"></i>
-                      <small >Error msg</small>
+                      <label for="email">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email ID" name="email" id="email">
+
                     </div>
                     <div class="form-group">
-                      <label>Password</label>
-                      <input type="password" class="form-control" id="password" placeholder="Password">
-                      <i class="fas fa-check-circle"></i>
-                      <i class="fas fa-exclamation-circle"></i>
-                      <small >Error msg</small> 
-                    
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" id="password">
                     </div>
                     <div class="form-group">
-                      <lablel >Confirm Password</lablel>
-                      <input type="confirm password" class="form-control" id="passwordc" placeholder="password">
-                      <i class="fas fa-check-circle"></i>
-                      <i class="fas fa-exclamation-circle"></i>
-                      <small >Error msg</small>
+                      <label for="password2">Confirm Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"name="password2" id="password2">
                     </div>
                     <div class="form-group form-help">
                     </div>
-                    <button  class="btn btn-primary btn-block">Sign up</button>
+                    <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+                    <center><small><label>Already have an account?<a href="login.html">Login in!</a></label></small></center>
                     <div class="form-group form-help">
 
-
-                      <center><p><label>Already have an account?<a href="login.html">Login in!</a></label></p></center>
                     </div>
                   </form>
 
@@ -78,73 +58,72 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </div>
-         <script type="text/javascript">
+    <script type="text/javascript">
 
-         const form= document.getElementById('form');
-         const user= document.getElementById('user');
-         const email= document.getElementById('email');
-         const password= document.getElementById('password');
-         const passwordc= document.getElementById('passwordc');
+        const form= document.getElementById('form');
+        const user= document.getElementById('user');
+        const email= document.getElementById('email');
+        const password= document.getElementById('password');
+        const passwordc= document.getElementById('passwordc');
 
-         form.addEventListener('submit',(event)  => {
-           event.preventDefault();})
+        form.addEventListener('submit',(event)  => {
+          event.preventDefault();})
 
-           function Validate(){
-         
-
-
-           const isEmail=(emailVal) =>{
-           var atSymbol= emailVal.indexOf("@");
-           if(atSymbol<1) return false;
-           var dot=emailVal.lastIndexOf('.');
-           if(dot<= atSymbol+2) return false;
-           if(dot=== emailVal.length-1) return false;
-           return true;
-                   }
-
-
-         const validate=() => {
-
-          
-         const userVal= user.value.trim();
-         const emailVal= email.value.trim();
-         const passwordVal= password.value.trim();
-         const passwordcVal= passwordc.value.trim();
-
-         if(userVal===""){
-           setErrorMsg(user, "username cannot be blank");
-
-         }else if(userVal.length <= 2) {
-           setErrorMsg(user,"user is min 3 char");
-             
-          }else {
-            setSuccessMsg(user);
-          }
+          function Validate(){
 
 
 
-          if(emailVal===""){
-           setErrorMsg(email, "email cannot be blank");
+          const isEmail=(emailVal) =>{
+          var atSymbol= emailVal.indexOf("@");
+          if(atSymbol<1) return false;
+          var dot=emailVal.lastIndexOf('.');
+          if(dot<= atSymbol+2) return false;
+          if(dot=== emailVal.length-1) return false;
+          return true;
+                  }
 
-         }else if(!isEmail(emailVal)) {
-           setErrorMsg(emailVal,"user is min 3 char");
-             
-          }else {
-            setSuccessMsg(email);
-          }
-             
-          function setErrorMsg(input,errormsgs){
-            const formGroup=input.parentElement;
-            const small= formGroup.querySelector('small');
-            formGroup.ClassName="form-group error";
-            small.innerTEXT=errormsgs;            
-          
-          }          
 
-        }
-      }
-        
-         </script>    
+        const validate=() => {
+
+
+        const userVal= user.value.trim();
+        const emailVal= email.value.trim();
+        const passwordVal= password.value.trim();
+        const passwordcVal= passwordc.value.trim();
+
+        if(userVal===""){
+          setErrorMsg(user, "username cannot be blank");
+
+        }else if(userVal.length <= 2) {
+          setErrorMsg(user,"user is min 3 char");
+
+         }else {
+           setSuccessMsg(user);
+         }
+
+
+
+         if(emailVal===""){
+          setErrorMsg(email, "email cannot be blank");
+
+        }else if(!isEmail(emailVal)) {
+          setErrorMsg(emailVal,"user is min 3 char");
+
+         }else {
+           setSuccessMsg(email);
+         }
+
+         function setErrorMsg(input,errormsgs){
+           const formGroup=input.parentElement;
+           const small= formGroup.querySelector('small');
+           formGroup.ClassName="form-group error";
+           small.innerTEXT=errormsgs;
+
+         }
+
+       }
+     }
+
+        </script>
 </body>
 </html>
-

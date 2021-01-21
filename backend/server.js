@@ -32,6 +32,12 @@ app.use(passport.session());
 app.get('/', function (req, res) {
    res.sendFile("login.html", { root: `${__dirname}/../frontend/` });
 })
+app.get('/login', function (req, res) {
+   res.sendFile("login.html", { root: `${__dirname}/../frontend/` });
+})
+app.get('/register', function (req, res) {
+   res.sendFile("register.html", { root: `${__dirname}/../frontend/` });
+})
 app.post('/register',urlencodedParser, (req, res) => {
 let {full_name,email,password,password2}=req.body;
 const salt = bcrypt.genSaltSync(saltRounds);
@@ -41,7 +47,7 @@ let values = [full_name, email, myhashpass]
 let quer = 'INSERT INTO register(full_name,email, password)values($1, $2, $3)';
 pool.query(quer, values, (err, res) => {
 console.log(err, res)
-pool.end();
+//pool.end();
 })
 res.sendFile("login.html", { root: `${__dirname}/../frontend/` });
 })
